@@ -3,3 +3,5 @@ npm-debug.log
 ntask.sqlite
 public
 logs
+*.cert
+*.key
