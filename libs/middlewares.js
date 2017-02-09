@@ -3,6 +3,7 @@ import express from "express"
 import cors from "cors"
 import morgan from "morgan"
 import compression from "compression";
+import helmet from "helmet";
 import logger from "./logger.js"
 
 module.exports = app => {
@@ -13,6 +14,7 @@ module.exports = app => {
       write: (message) => { logger.info(message); }
     }
   }));
+  app.use(helmet());
   app.set(cors({
     origin: ["http://localhost:3001"],
     methods: ["GET", "POST", "PUT", "DELETE"],
